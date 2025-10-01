@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourabh Portfolio</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans scroll-smooth">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Sourabh K. Joshi</h1>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#work" class="hover:text-blue-400">Work</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+    <h2 class="text-5xl font-extrabold mb-4">Hi, I’m Sourabh 👋</h2>
+    <p class="text-lg text-gray-300 max-w-2xl">
+      Electrical Engineer • Power Electronics • Data Science • Chess Enthusiast  
+    </p>
+    <a href="#work" class="mt-8 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700">
+      View My Work
+    </a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 max-w-4xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">About Me</h3>
+    <p class="text-gray-300 leading-relaxed">
+      I’m passionate about innovating at the intersection of power electronics and data science. 
+      My goal is to design intelligent, efficient energy systems for a sustainable future.  
+      Outside research, I love teaching chess and exploring the beauty of nature.
+    </p>
+  </section>
+
+  <!-- Work / Projects -->
+  <section id="work" class="py-20 bg-gray-800 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10">My Work</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">🔋 Power Electronics</h4>
+          <p class="text-gray-400 text-sm">
+            High-efficiency DC-DC converters and battery management systems.
+          </p>
+        </div>
+        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">🤖 Data Science</h4>
+          <p class="text-gray-400 text-sm">
+            Machine learning for forecasting and optimization of energy systems.
+          </p>
+        </div>
+        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">♟ ChessDepth</h4>
+          <p class="text-gray-400 text-sm">
+            Founder of ChessDepth.in — teaching and resources for chess players.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+    <p class="text-gray-300 mb-4">
+      Feel free to reach out for collaborations, projects, or just to say hello!
+    </p>
+    <p>Email: <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400">joshisourabh47@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sourabhk_nitb" class="text-blue-400">sourabhk_nitb</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-800 text-center text-gray-400">
+    © 2025 Sourabh K. Joshi. All rights reserved.
+  </footer>
+
+</body>
+</html>
