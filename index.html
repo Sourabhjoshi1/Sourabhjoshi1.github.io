@@ -18,8 +18,9 @@
   <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50 shadow-lg">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">Sourabh K. Joshi</h1>
-      <nav class="space-x-6">
+      <nav class="space-x-6 hidden md:flex">
         <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#skills" class="hover:text-blue-400">Skills</a>
         <a href="#work" class="hover:text-blue-400">Work</a>
         <a href="#journey" class="hover:text-blue-400">Journey</a>
         <a href="#contact" class="hover:text-blue-400">Contact</a>
@@ -48,35 +49,51 @@
     <p data-aos="fade-up" class="text-gray-300 leading-relaxed mb-6">
       I’m passionate about innovating at the intersection of power electronics and data science. 
       My goal is to design intelligent, efficient energy systems for a sustainable future.  
-      Outside research, I love teaching chess and exploring the beauty of nature.
     </p>
     <p data-aos="fade-up" data-aos-delay="200" class="text-gray-400">
-      I enjoy building meaningful projects, learning new technologies, and pushing myself to grow.
-      My philosophy is simple: <span class="text-blue-400">keep learning, keep building, keep sharing.</span>
+      Beyond engineering, I’m a chess coach and the founder of <span class="text-blue-400">ChessDepth.in</span>.  
+      I believe in lifelong learning, sharing knowledge, and creating meaningful impact.
     </p>
   </section>
 
-  <!-- Work / Projects -->
-  <section id="work" class="py-32 bg-gray-800 px-6">
+  <!-- Skills -->
+  <section id="skills" class="py-32 bg-gray-800 px-6">
     <div class="max-w-6xl mx-auto">
-      <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">My Work</h3>
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">Skills</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div data-aos="zoom-in" class="p-4 bg-gray-900 rounded shadow">⚡ Power Electronics</div>
+        <div data-aos="zoom-in" data-aos-delay="100" class="p-4 bg-gray-900 rounded shadow">🔋 Battery Systems</div>
+        <div data-aos="zoom-in" data-aos-delay="200" class="p-4 bg-gray-900 rounded shadow">🤖 Machine Learning</div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="p-4 bg-gray-900 rounded shadow">📊 Data Analysis</div>
+        <div data-aos="zoom-in" data-aos-delay="400" class="p-4 bg-gray-900 rounded shadow">💻 MATLAB/Simulink</div>
+        <div data-aos="zoom-in" data-aos-delay="500" class="p-4 bg-gray-900 rounded shadow">🛠 LTspice</div>
+        <div data-aos="zoom-in" data-aos-delay="600" class="p-4 bg-gray-900 rounded shadow">🌐 Python</div>
+        <div data-aos="zoom-in" data-aos-delay="700" class="p-4 bg-gray-900 rounded shadow">♟ Chess Coaching</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Projects -->
+  <section id="work" class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">Projects</h3>
       <div class="grid md:grid-cols-3 gap-8">
-        <div data-aos="flip-left" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
-          <h4 class="text-xl font-semibold mb-2">🔋 Power Electronics</h4>
+        <div data-aos="fade-up" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">🔋 High-Efficiency Converters</h4>
           <p class="text-gray-400 text-sm">
-            High-efficiency DC-DC converters and battery management systems.
+            Designed and simulated bidirectional DC-DC converters with focus on renewable energy and battery applications.
           </p>
         </div>
-        <div data-aos="flip-up" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
-          <h4 class="text-xl font-semibold mb-2">🤖 Data Science</h4>
+        <div data-aos="fade-up" data-aos-delay="150" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">🤖 AI in Energy Systems</h4>
           <p class="text-gray-400 text-sm">
-            Machine learning for forecasting and optimization of energy systems.
+            Built ML models to forecast CO₂ emissions and optimize energy usage with intelligent algorithms.
           </p>
         </div>
-        <div data-aos="flip-right" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
-          <h4 class="text-xl font-semibold mb-2">♟ ChessDepth</h4>
+        <div data-aos="fade-up" data-aos-delay="300" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
+          <h4 class="text-xl font-semibold mb-2">♟ ChessDepth Academy</h4>
           <p class="text-gray-400 text-sm">
-            Founder of ChessDepth.in — teaching and resources for chess players.
+            Founded ChessDepth.in, providing coaching and resources for 1600+ chess students worldwide.
           </p>
         </div>
       </div>
@@ -84,57 +101,72 @@
   </section>
 
   <!-- Journey / Timeline -->
-  <section id="journey" class="py-32 max-w-5xl mx-auto px-6">
-    <h3 data-aos="fade-up" class="text-3xl font-bold mb-12">My Journey</h3>
-    <div class="space-y-10">
+  <section id="journey" class="py-32 bg-gray-800 px-6">
+    <h3 data-aos="fade-up" class="text-3xl font-bold mb-12 text-center">My Journey</h3>
+    <div class="space-y-12 max-w-4xl mx-auto">
       <div data-aos="fade-left" class="border-l-4 border-blue-500 pl-6">
         <h4 class="text-xl font-semibold">🎓 Education</h4>
-        <p class="text-gray-400">M.Tech in Power Electronics and Drives • Deep interest in AI & Control Systems</p>
+        <p class="text-gray-400">M.Tech in Power Electronics & Drives • B.Tech in Electrical Engineering</p>
       </div>
       <div data-aos="fade-right" class="border-l-4 border-blue-500 pl-6">
         <h4 class="text-xl font-semibold">💼 Research</h4>
-        <p class="text-gray-400">Worked on high-efficiency DC-DC converters, AI-driven battery optimization</p>
+        <p class="text-gray-400">Worked on SiC/GaN devices, AI-based BMS, and advanced converter design.</p>
       </div>
       <div data-aos="fade-left" class="border-l-4 border-blue-500 pl-6">
         <h4 class="text-xl font-semibold">🌍 Projects</h4>
-        <p class="text-gray-400">ChessDepth Academy, CO₂ Forecasting with ML, Dog-Inspired Exploration Algorithm</p>
+        <p class="text-gray-400">ChessDepth Academy, CO₂ Forecasting, Dog-Inspired Exploration Algorithm.</p>
+      </div>
+      <div data-aos="fade-right" class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-xl font-semibold">🚀 Future Goals</h4>
+        <p class="text-gray-400">Contribute to sustainable tech, explore AI in physics, and collaborate globally.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-32 max-w-4xl mx-auto px-6 text-center">
-    <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Contact Me</h3>
+    <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Get in Touch</h3>
     <p class="text-gray-300 mb-4" data-aos="fade-up">
-      Feel free to reach out for collaborations, projects, or just to say hello!
+      Let’s collaborate on research, projects, or chess training!
     </p>
-    <p data-aos="fade-up" data-aos-delay="200">
-      Email: <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400">joshisourabh47@gmail.com</a>
-    </p>
-    <p data-aos="fade-up" data-aos-delay="400">
-      LinkedIn: <a href="https://www.linkedin.com/in/sourabhk_nitb" class="text-blue-400">sourabhk_nitb</a>
-    </p>
+    <form data-aos="fade-up" class="max-w-md mx-auto space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button type="submit" class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Send</button>
+    </form>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 bg-gray-800 text-center text-gray-400">
+  <footer class="py-6 bg-gray-900 text-center text-gray-400">
     © 2025 Sourabh K. Joshi. All rights reserved.
   </footer>
 
-  <!-- Dark Mode Script -->
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg hover:bg-blue-700">
+    ↑
+  </button>
+
+  <!-- Scripts -->
   <script>
+    // Dark Mode
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
     themeToggle.addEventListener('click', () => {
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        themeToggle.textContent = '☀️';
+      html.classList.toggle('dark');
+      themeToggle.textContent = html.classList.contains('dark') ? '🌙' : '☀️';
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('hidden');
       } else {
-        html.classList.add('dark');
-        themeToggle.textContent = '🌙';
+        backToTop.classList.add('hidden');
       }
     });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
   <!-- AOS Init -->
