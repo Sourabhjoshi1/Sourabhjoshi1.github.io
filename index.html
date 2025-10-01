@@ -1,65 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sourabh Portfolio</title>
-  <!-- Tailwind via CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white font-sans scroll-smooth">
+<body class="bg-gray-900 text-white font-sans scroll-smooth transition-colors duration-500">
 
   <!-- Navbar -->
-  <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50">
+  <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50 shadow-lg">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">Sourabh K. Joshi</h1>
       <nav class="space-x-6">
         <a href="#about" class="hover:text-blue-400">About</a>
         <a href="#work" class="hover:text-blue-400">Work</a>
+        <a href="#journey" class="hover:text-blue-400">Journey</a>
         <a href="#contact" class="hover:text-blue-400">Contact</a>
       </nav>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="ml-6 px-3 py-1 bg-gray-700 rounded hover:bg-gray-600 text-sm">
+        🌙
+      </button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 to-gray-800 px-6">
-    <h2 class="text-5xl font-extrabold mb-4">Hi, I’m Sourabh 👋</h2>
-    <p class="text-lg text-gray-300 max-w-2xl">
+    <h2 data-aos="zoom-in" class="text-5xl font-extrabold mb-4">Hi, I’m Sourabh 👋</h2>
+    <p data-aos="fade-up" class="text-lg text-gray-300 max-w-2xl">
       Electrical Engineer • Power Electronics • Data Science • Chess Enthusiast  
     </p>
-    <a href="#work" class="mt-8 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700">
+    <a href="#work" data-aos="fade-up" data-aos-delay="200" class="mt-8 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
       View My Work
     </a>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-6">About Me</h3>
-    <p class="text-gray-300 leading-relaxed">
+  <section id="about" class="py-32 max-w-4xl mx-auto px-6">
+    <h3 data-aos="fade-right" class="text-3xl font-bold mb-6">About Me</h3>
+    <p data-aos="fade-up" class="text-gray-300 leading-relaxed mb-6">
       I’m passionate about innovating at the intersection of power electronics and data science. 
       My goal is to design intelligent, efficient energy systems for a sustainable future.  
       Outside research, I love teaching chess and exploring the beauty of nature.
     </p>
+    <p data-aos="fade-up" data-aos-delay="200" class="text-gray-400">
+      I enjoy building meaningful projects, learning new technologies, and pushing myself to grow.
+      My philosophy is simple: <span class="text-blue-400">keep learning, keep building, keep sharing.</span>
+    </p>
   </section>
 
   <!-- Work / Projects -->
-  <section id="work" class="py-20 bg-gray-800 px-6">
+  <section id="work" class="py-32 bg-gray-800 px-6">
     <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold mb-10">My Work</h3>
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">My Work</h3>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+        <div data-aos="flip-left" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">🔋 Power Electronics</h4>
           <p class="text-gray-400 text-sm">
             High-efficiency DC-DC converters and battery management systems.
           </p>
         </div>
-        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+        <div data-aos="flip-up" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">🤖 Data Science</h4>
           <p class="text-gray-400 text-sm">
             Machine learning for forecasting and optimization of energy systems.
           </p>
         </div>
-        <div class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
+        <div data-aos="flip-right" class="p-6 bg-gray-900 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">♟ ChessDepth</h4>
           <p class="text-gray-400 text-sm">
             Founder of ChessDepth.in — teaching and resources for chess players.
@@ -69,14 +83,37 @@
     </div>
   </section>
 
+  <!-- Journey / Timeline -->
+  <section id="journey" class="py-32 max-w-5xl mx-auto px-6">
+    <h3 data-aos="fade-up" class="text-3xl font-bold mb-12">My Journey</h3>
+    <div class="space-y-10">
+      <div data-aos="fade-left" class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-xl font-semibold">🎓 Education</h4>
+        <p class="text-gray-400">M.Tech in Power Electronics and Drives • Deep interest in AI & Control Systems</p>
+      </div>
+      <div data-aos="fade-right" class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-xl font-semibold">💼 Research</h4>
+        <p class="text-gray-400">Worked on high-efficiency DC-DC converters, AI-driven battery optimization</p>
+      </div>
+      <div data-aos="fade-left" class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-xl font-semibold">🌍 Projects</h4>
+        <p class="text-gray-400">ChessDepth Academy, CO₂ Forecasting with ML, Dog-Inspired Exploration Algorithm</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-20 max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
-    <p class="text-gray-300 mb-4">
+  <section id="contact" class="py-32 max-w-4xl mx-auto px-6 text-center">
+    <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Contact Me</h3>
+    <p class="text-gray-300 mb-4" data-aos="fade-up">
       Feel free to reach out for collaborations, projects, or just to say hello!
     </p>
-    <p>Email: <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400">joshisourabh47@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sourabhk_nitb" class="text-blue-400">sourabhk_nitb</a></p>
+    <p data-aos="fade-up" data-aos-delay="200">
+      Email: <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400">joshisourabh47@gmail.com</a>
+    </p>
+    <p data-aos="fade-up" data-aos-delay="400">
+      LinkedIn: <a href="https://www.linkedin.com/in/sourabhk_nitb" class="text-blue-400">sourabhk_nitb</a>
+    </p>
   </section>
 
   <!-- Footer -->
@@ -84,5 +121,30 @@
     © 2025 Sourabh K. Joshi. All rights reserved.
   </footer>
 
+  <!-- Dark Mode Script -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        themeToggle.textContent = '☀️';
+      } else {
+        html.classList.add('dark');
+        themeToggle.textContent = '🌙';
+      }
+    });
+  </script>
+
+  <!-- AOS Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 120,
+      once: true
+    });
+  </script>
 </body>
 </html>
