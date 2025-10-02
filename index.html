@@ -17,7 +17,10 @@
   <!-- Navbar -->
   <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50 shadow-lg">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Sourabh K. Joshi</h1>
+      <!-- Clickable Header -->
+      <a href="#about" class="text-xl font-bold hover:text-blue-400 transition">
+        Sourabh K. Joshi
+      </a>
       <nav class="space-x-6 hidden md:flex">
         <a href="#about" class="hover:text-blue-400">About</a>
         <a href="#skills" class="hover:text-blue-400">Skills</a>
@@ -123,7 +126,7 @@
     </div>
   </section>
 
-    <!-- Contact -->
+  <!-- Contact -->
   <section id="contact" class="py-32 max-w-4xl mx-auto px-6 text-center">
     <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Get in Touch</h3>
     <p class="text-gray-300 mb-8" data-aos="fade-up">
@@ -132,40 +135,21 @@
 
     <!-- Direct Contact Info -->
     <div class="mb-10 space-y-4" data-aos="fade-up" data-aos-delay="100">
-      <p>
-        📧 <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400 hover:underline">
-          joshisourabh47@gmail.com
-        </a>
-      </p>
-      <p>
-        🔗 <a href="https://www.linkedin.com/in/sourabhk_nitb" target="_blank" class="text-blue-400 hover:underline">
-          linkedin.com/in/sourabhk_nitb
-        </a>
-      </p>
-      <p>
-        🐙 <a href="https://github.com/Sourabhjoshi1" target="_blank" class="text-blue-400 hover:underline">
-          github.com/Sourabhjoshi1
-        </a>
-      </p>
+      <p>📧 <a href="mailto:joshisourabh47@gmail.com" class="text-blue-400 hover:underline">joshisourabh47@gmail.com</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/sourabhk_nitb" target="_blank" class="text-blue-400 hover:underline">linkedin.com/in/sourabhk_nitb</a></p>
+      <p>🐙 <a href="https://github.com/Sourabhjoshi1" target="_blank" class="text-blue-400 hover:underline">github.com/Sourabhjoshi1</a></p>
     </div>
 
     <!-- Contact Form -->
     <form data-aos="fade-up" data-aos-delay="200" class="max-w-md mx-auto space-y-4">
-      <input type="text" placeholder="Your Name" 
-             class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="email" placeholder="Your Email" 
-             class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <textarea placeholder="Your Message" rows="4" 
-                class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-      <button type="submit" 
-              class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
-        Send
-      </button>
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <button type="submit" class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Send</button>
     </form>
   </section>
 
-
-   <!-- Footer -->
+  <!-- Footer -->
   <footer class="bg-gray-900 py-10 text-center text-gray-400">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Social Links -->
@@ -174,19 +158,13 @@
         <a href="https://www.linkedin.com/in/sourabhk_nitb" target="_blank" class="hover:text-blue-400 transition">🔗</a>
         <a href="https://github.com/Sourabhjoshi1" target="_blank" class="hover:text-blue-400 transition">🐙</a>
       </div>
-
       <!-- Copyright -->
       <p class="text-sm">
         © <span id="year"></span> <span class="font-semibold">Sourabh K. Joshi</span>.  
-        Built with ❤️ using <span class="text-blue-400">Tailwind CSS</span>.
+        Built by Sourabh Joshi with ❤️ using <span class="text-blue-400">Tailwind CSS</span>.
       </p>
     </div>
   </footer>
-
-  <!-- Script to auto-update year -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg hover:bg-blue-700">
@@ -199,7 +177,6 @@
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
-    // Set theme on load
     if (localStorage.getItem('theme') === 'light') {
       html.classList.remove('dark');
       themeToggle.textContent = '🌙';
@@ -208,7 +185,6 @@
       themeToggle.textContent = '☀️';
     }
 
-    // Toggle theme on click
     themeToggle.addEventListener('click', () => {
       if (html.classList.contains('dark')) {
         html.classList.remove('dark');
@@ -231,16 +207,15 @@
       }
     });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Footer Year
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
   <!-- AOS Init -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,
-      offset: 120,
-      once: true
-    });
+    AOS.init({ duration: 800, offset: 120, once: true });
   </script>
 </body>
 </html>
