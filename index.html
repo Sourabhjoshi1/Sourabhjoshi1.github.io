@@ -165,10 +165,28 @@
   </section>
 
 
-  <!-- Footer -->
-  <footer class="py-6 bg-gray-900 text-center text-gray-400">
-    © 2025 Sourabh K. Joshi. All rights reserved.
+   <!-- Footer -->
+  <footer class="bg-gray-900 py-10 text-center text-gray-400">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Social Links -->
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="mailto:joshisourabh47@gmail.com" class="hover:text-blue-400 transition">📧</a>
+        <a href="https://www.linkedin.com/in/sourabhk_nitb" target="_blank" class="hover:text-blue-400 transition">🔗</a>
+        <a href="https://github.com/Sourabhjoshi1" target="_blank" class="hover:text-blue-400 transition">🐙</a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-sm">
+        © <span id="year"></span> <span class="font-semibold">Sourabh K. Joshi</span>.  
+        Built with ❤️ using <span class="text-blue-400">Tailwind CSS</span>.
+      </p>
+    </div>
   </footer>
+
+  <!-- Script to auto-update year -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg hover:bg-blue-700">
