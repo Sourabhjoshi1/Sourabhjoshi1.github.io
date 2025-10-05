@@ -1,65 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="dark"> <!-- ensure Tailwind detects dark mode -->
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sourabh Portfolio</title>
-  <!-- Tailwind CSS -->
+  <meta name="description" content="Sourabh K. Joshi — Electrical Engineer | Power Electronics | Data Science | Chess Coach" />
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Small custom styles for spinner & subtle light-mode tweaks */
+    .loader {
+      border: 6px solid rgba(255,255,255,0.08);
+      border-top: 6px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Light-mode overrides when html doesn't have .dark */
+    .light--text { color: #111827; }
+    .light--bg { background: linear-gradient(180deg,#f7fafc,#eef2f7); }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans scroll-smooth transition-colors duration-500">
+
+  <!-- Loading overlay (shows briefly on page load) -->
+  <div id="loading" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-50">
+    <div class="loader" role="status" aria-label="Loading"></div>
+  </div>
 
   <!-- Navbar -->
   <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50 shadow-lg">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <!-- Clickable Header -->
-      <a href="#about" class="text-xl font-bold hover:text-blue-400 transition">
-        Sourabh K. Joshi
-      </a>
+      <a href="#about" class="text-xl font-bold hover:text-blue-400 transition">Sourabh K. Joshi</a>
       <nav class="space-x-6 hidden md:flex">
         <a href="#about" class="hover:text-blue-400">About</a>
         <a href="#skills" class="hover:text-blue-400">Skills</a>
         <a href="#work" class="hover:text-blue-400">Work</a>
+        <a href="#research" class="hover:text-blue-400">Research</a>
         <a href="#journey" class="hover:text-blue-400">Journey</a>
         <a href="#contact" class="hover:text-blue-400">Contact</a>
       </nav>
-      <!-- Dark Mode Toggle -->
-      <button id="theme-toggle" class="ml-6 px-3 py-1 bg-gray-700 rounded hover:bg-gray-600 text-sm" aria-label="Switch theme">
-        🌙
-      </button>
+
+      <div class="flex items-center">
+        <!-- Resume Button -->
+        <a href="/resume.pdf" download class="hidden sm:inline-block mr-4 px-4 py-2 border border-transparent rounded bg-transparent hover:bg-blue-600 hover:text-white transition text-sm">Resume</a>
+
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="ml-2 px-3 py-1 bg-gray-700 rounded hover:bg-gray-600 text-sm" aria-label="Switch theme">🌙</button>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 to-gray-800 px-6">
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 to-gray-800 px-6">
     <h2 data-aos="zoom-in" class="text-5xl font-extrabold mb-4">Hi, I’m Sourabh 👋</h2>
     <p data-aos="fade-up" class="text-lg text-gray-300 max-w-2xl">
-      Electrical Engineer • Power Electronics • Data Science • Chess Enthusiast  
+      Electrical Engineer • Power Electronics • Data Science • Chess Enthusiast
     </p>
-    <a href="#work" data-aos="fade-up" data-aos-delay="200" class="mt-8 px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
-      View My Work
-    </a>
+    <div class="mt-8 flex gap-4">
+      <a href="#work" data-aos="fade-up" data-aos-delay="200" class="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">View My Work</a>
+      <a href="#contact" data-aos="fade-up" data-aos-delay="250" class="px-6 py-3 border border-gray-600 rounded-lg hover:border-blue-400 transition">Contact Me</a>
+    </div>
+
+    <!-- Small stats / badges -->
+    <div class="mt-8 flex gap-4 items-center">
+      <img src="https://github-readme-stats.vercel.app/api?username=Sourabhjoshi1&show_icons=true&hide_border=true&theme=tokyonight" alt="GitHub stats" class="rounded-lg shadow-md w-52" />
+      <a href="https://www.chess.com/" target="_blank" class="text-gray-300 hover:text-blue-400">♟ Chess Profile</a>
+    </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-32 max-w-4xl mx-auto px-6">
+  <section id="about" class="py-24 max-w-4xl mx-auto px-6">
     <h3 data-aos="fade-right" class="text-3xl font-bold mb-6">About Me</h3>
     <p data-aos="fade-up" class="text-gray-300 leading-relaxed mb-6">
-      I’m passionate about innovating at the intersection of power electronics and data science. 
-      My goal is to design intelligent, efficient energy systems for a sustainable future.  
+      I’m passionate about innovating at the intersection of power electronics and data science. My goal is to design intelligent, efficient energy systems for a sustainable future.
     </p>
     <p data-aos="fade-up" data-aos-delay="200" class="text-gray-400">
-      Beyond engineering, I’m a chess coach and the founder of <span class="text-blue-400">ChessDepth.in</span>.  
-      I believe in lifelong learning, sharing knowledge, and creating meaningful impact.
+      Beyond engineering, I coach chess and founded <a href="https://chessdepth.in" target="_blank" class="text-blue-400 hover:underline">ChessDepth.in</a>. I enjoy building projects, publishing research, and teaching.
     </p>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-32 bg-gray-800 px-6">
+  <section id="skills" class="py-16 bg-gray-800 px-6">
     <div class="max-w-6xl mx-auto">
-      <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">Skills</h3>
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-8">Skills</h3>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div data-aos="zoom-in" class="p-4 bg-gray-900 rounded shadow">⚡ Power Electronics</div>
         <div data-aos="zoom-in" data-aos-delay="100" class="p-4 bg-gray-900 rounded shadow">🔋 Battery Systems</div>
@@ -74,36 +107,81 @@
   </section>
 
   <!-- Work / Projects -->
-  <section id="work" class="py-32 px-6">
+  <section id="work" class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
       <h3 data-aos="fade-up" class="text-3xl font-bold mb-10">Projects</h3>
       <div class="grid md:grid-cols-3 gap-8">
         <div data-aos="fade-up" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">🔋 High-Efficiency Converters</h4>
-          <p class="text-gray-400 text-sm">
-            Designed and simulated bidirectional DC-DC converters with focus on renewable energy and battery applications.
-          </p>
+          <p class="text-gray-400 text-sm">Designed and simulated bidirectional DC-DC converters with focus on renewable energy and battery applications.</p>
         </div>
         <div data-aos="fade-up" data-aos-delay="150" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">🤖 AI in Energy Systems</h4>
-          <p class="text-gray-400 text-sm">
-            Built ML models to forecast CO₂ emissions and optimize energy usage with intelligent algorithms.
-          </p>
+          <p class="text-gray-400 text-sm">Built ML models to forecast CO₂ emissions and optimize energy usage with intelligent algorithms.</p>
         </div>
         <div data-aos="fade-up" data-aos-delay="300" class="p-6 bg-gray-800 rounded-lg shadow hover:scale-105 transition-transform">
           <h4 class="text-xl font-semibold mb-2">♟ ChessDepth Academy</h4>
-          <p class="text-gray-400 text-sm">
-            Founded ChessDepth.in, providing coaching and resources for 1600+ chess students worldwide.
-          </p>
+          <p class="text-gray-400 text-sm">Founded ChessDepth.in, providing coaching and resources for 1600+ chess students worldwide.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Journey -->
-  <section id="journey" class="py-32 bg-gray-800 px-6">
-    <h3 data-aos="fade-up" class="text-3xl font-bold mb-12 text-center">My Journey</h3>
-    <div class="space-y-12 max-w-4xl mx-auto">
+  <!-- Research & Publications -->
+  <section id="research" class="py-24 bg-gray-900 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-8">Research & Publications</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div data-aos="fade-up" class="p-6 bg-gray-800 rounded-lg shadow">
+          <h4 class="text-xl font-semibold text-blue-400">AI-Based State-of-Health Estimation for Li-ion Batteries</h4>
+          <p class="text-gray-400 mt-2">IEEE manuscript (in preparation). Combining deep learning with bio-inspired optimizers (DiGEA) for robust SOH estimation in smart microgrids. <a href="#" class="text-blue-400 hover:underline">Preprint / Repo</a></p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="p-6 bg-gray-800 rounded-lg shadow">
+          <h4 class="text-xl font-semibold text-blue-400">Dog-Inspired Gradual Exploration Algorithm (DiGEA)</h4>
+          <p class="text-gray-400 mt-2">Novel metaheuristic inspired by canine exploratory patterns — applied to hyperparameter tuning and energy optimization problems. <a href="#" class="text-blue-400 hover:underline">Repo</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-800 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-8">What Students Say</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div data-aos="fade-up" class="p-6 bg-gray-900 rounded shadow">
+          <p class="italic text-gray-300">"Sourabh’s lessons helped me reach 1800 in 3 months!"</p>
+          <p class="mt-4 text-blue-400 font-semibold">— Aiden (USA)</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="p-6 bg-gray-900 rounded shadow">
+          <p class="italic text-gray-300">"The clarity he brings in positional chess is unmatched."</p>
+          <p class="mt-4 text-blue-400 font-semibold">— Riya (Mumbai)</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="p-6 bg-gray-900 rounded shadow">
+          <p class="italic text-gray-300">"Best coach I’ve had — practical, logical, and patient!"</p>
+          <p class="mt-4 text-blue-400 font-semibold">— Lucas (UAE)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Currently Exploring -->
+  <section id="focus" class="py-20 px-6 bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Currently Exploring</h3>
+      <ul class="space-y-4 text-gray-300">
+        <li data-aos="fade-up">🚀 Bio-inspired optimization techniques for deep learning model tuning</li>
+        <li data-aos="fade-up" data-aos-delay="100">🔋 Advanced Battery Management Systems (AI-based SOH estimation)</li>
+        <li data-aos="fade-up" data-aos-delay="200">💪 Human hypertrophy science & sports performance</li>
+        <li data-aos="fade-up" data-aos-delay="300">♟ Expanding ChessDepth’s online reach & content strategy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Journey / Timeline -->
+  <section id="journey" class="py-24 bg-gray-800 px-6">
+    <h3 data-aos="fade-up" class="text-3xl font-bold mb-8 text-center">My Journey</h3>
+    <div class="space-y-8 max-w-4xl mx-auto">
       <div data-aos="fade-left" class="border-l-4 border-blue-500 pl-6">
         <h4 class="text-xl font-semibold">🎓 Education</h4>
         <p class="text-gray-400">M.Tech in Power Electronics & Drives, NIT Nagpur • B.Tech in Electrical Engineering from NIT Bhopal</p>
@@ -123,12 +201,15 @@
     </div>
   </section>
 
+  <!-- Quote / Motto -->
+  <section class="py-12 bg-gray-900 text-center text-gray-400 italic">
+    “Innovation is born when curiosity meets consistency.” — <span class="text-blue-400">Sourabh K. Joshi</span>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-32 max-w-4xl mx-auto px-6 text-center">
+  <section id="contact" class="py-20 max-w-4xl mx-auto px-6 text-center">
     <h3 data-aos="fade-up" class="text-3xl font-bold mb-6">Get in Touch</h3>
-    <p class="text-gray-300 mb-8" data-aos="fade-up">
-      Let’s collaborate on research, projects, or chess training!
-    </p>
+    <p class="text-gray-300 mb-8" data-aos="fade-up">Let’s collaborate on research, projects, or chess training!</p>
 
     <!-- Direct Contact Info -->
     <div class="mb-10 space-y-4" data-aos="fade-up" data-aos-delay="100">
@@ -137,11 +218,11 @@
       <p>🐙 <a href="https://github.com/Sourabhjoshi1" target="_blank" class="text-blue-400 hover:underline">github.com/Sourabhjoshi1</a></p>
     </div>
 
-    <!-- Contact Form -->
-    <form data-aos="fade-up" data-aos-delay="200" class="max-w-md mx-auto space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+    <!-- Contact Form (no backend) -->
+    <form data-aos="fade-up" data-aos-delay="200" class="max-w-md mx-auto space-y-4" onsubmit="event.preventDefault(); alert('Thanks! I will get back to you. (Form not connected)')">
+      <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+      <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
       <button type="submit" class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">Send</button>
     </form>
   </section>
@@ -149,28 +230,29 @@
   <!-- Footer -->
   <footer class="bg-gray-900 py-10 text-center text-gray-400">
     <div class="max-w-6xl mx-auto px-6">
-      <!-- Social Links -->
       <div class="flex justify-center space-x-6 mb-6">
         <a href="mailto:joshisourabh47@gmail.com" class="hover:text-blue-400 transition">📧</a>
-        <a href="https://www.linkedin.com/in/sourabhk-nitb" target="_blank" class="hover:text-blue-400 transition">🔗</a>
+        <a href="https://www.linkedin.com/in/sourabhk_nitb" target="_blank" class="hover:text-blue-400 transition">🔗</a>
         <a href="https://github.com/Sourabhjoshi1" target="_blank" class="hover:text-blue-400 transition">🐙</a>
       </div>
-      <!-- Copyright -->
-      <p class="text-sm">
-        © <span id="year"></span> <span class="font-semibold">Sourabh K. Joshi</span>.  
-        Built by Sourabh Joshi with ❤️ using <span class="text-blue-400">Tailwind CSS</span>.
-      </p>
+      <p class="text-sm">© <span id="year"></span> <span class="font-semibold">Sourabh K. Joshi</span>. Built with ❤️ using <span class="text-blue-400">Tailwind CSS</span>.</p>
     </div>
   </footer>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg hover:bg-blue-700">
-    ↑
-  </button>
+  <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-3 py-2 rounded-full shadow-lg hover:bg-blue-700" aria-label="Back to top">↑</button>
 
   <!-- Scripts -->
   <script>
-    // 🌙☀️ Theme persistence with localStorage
+    // Hide loading overlay after small delay so AOS has time to init
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const l = document.getElementById('loading');
+        if (l) l.style.display = 'none';
+      }, 600);
+    });
+
+    // Theme persistence with localStorage
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
@@ -217,13 +299,11 @@
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // Footer Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
   <!-- AOS Init -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, offset: 120, once: true });
-  </script>
+  <script> AOS.init({ duration: 800, offset: 120, once: true });</script>
 </body>
 </html>
